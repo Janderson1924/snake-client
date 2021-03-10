@@ -11,6 +11,10 @@ const connect = function (){
   conn.on('data', function (data) {
     console.log(data)
   });
+  conn.on('connect', function () {
+    console.log('Welcome to the Jungle!')
+    conn.write('Name: JKA')
+  });
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
